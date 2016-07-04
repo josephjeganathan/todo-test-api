@@ -15,15 +15,21 @@ const addTodo = text => {
 };
 
 const toggleTodo = id => {
+
+  let toggledTodo;
+
   todos = todos.map(todo => {
     if (todo.id !== id) {
       return todo;
     } else {
-      return Object.assign({}, todo, {
+      toggledTodo = Object.assign({}, todo, {
         completed: !todo.completed
       });
+      return toggledTodo;
     }
   });
+
+  return toggledTodo;
 };
 
 const getTodos = () => todos;
@@ -33,5 +39,3 @@ module.exports = {
   getTodos,
   toggleTodo
 };
-
-
