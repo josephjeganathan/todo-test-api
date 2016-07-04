@@ -38,7 +38,7 @@ api.route({
   handler: function (request, reply) {
     let addedTodo = todos.addTodo(request.payload.text);
 
-    socket.emit('TodoAdded',addedTodo);
+    socket.emit('TodoAdded', addedTodo);
     reply(addedTodo);
   }
 });
